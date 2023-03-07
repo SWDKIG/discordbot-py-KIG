@@ -41,7 +41,8 @@ async def on_message(message):
 
     if message.content.startswith(f'{PREFIX}hello'):
         await message.channel.send('Hello!')
-    if message.content == ".내정보":
+        
+    if message.content == f'{PREFIX}내정보':
         date = datetime.datetime.utcfromtimestamp(((int(message.author.id)>>22) + 1420070400000) / 1000)
         embed = discord.Embed(color = 0xffd400)
         embed.add_field(name="이름" , value=message.author.name, inline=True)
